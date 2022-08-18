@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class StockServiceImpl implements StockService{
    
@@ -19,7 +21,7 @@ public class StockServiceImpl implements StockService{
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public Stock getStockByID(String stock_symbol) {
+    public List<Stock> getStockByID(String stock_symbol) {
         return dao.getStockByID(stock_symbol);
     }
 

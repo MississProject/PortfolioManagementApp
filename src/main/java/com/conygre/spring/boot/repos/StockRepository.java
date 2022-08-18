@@ -5,13 +5,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Integer> {
     // get all stocks
     // get stock by id
-    @Query("SELECT * FROM stocks where stock_symbol=:stock_symbol")
-    Stock getStockByID(@Param("stock_symbol") String stock_symbol);
+    @Query(value= "SELECT * FROM Stock where stock_symbol=:stock_symbol", nativeQuery = true)
+    List<Stock> getStockByID(@Param("stock_symbol") String stock_symbol);
     // get stock price
-    @Query("SELECT stock_price FROM stocks where stock_symbol=:stock_symbol")
+    @Query("SELECT stock_price FROM Stock where stock_symbol=:stock_symbol")
     Double getStockPrice(@Param("stock_symbol") String stock_symbol);
 }
