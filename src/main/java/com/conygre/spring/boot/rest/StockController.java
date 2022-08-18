@@ -24,7 +24,7 @@ public class StockController {
         return service.getStockByID(stock_symbol);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value="/abc/{stock_symbol}")
+    @RequestMapping(method = RequestMethod.GET, value="/price/{stock_symbol}")
     public Double getStockPrice(@PathVariable("stock_symbol") String stock_symbol) {
         return service.getStockPrice(stock_symbol);
     }
