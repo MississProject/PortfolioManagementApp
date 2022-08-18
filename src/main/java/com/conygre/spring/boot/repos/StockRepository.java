@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface StockRepository extends JpaRepository<Stock, Integer> {
+public interface StockRepository extends JpaRepository<Stock, String> {
     // get all stocks
     // get stock by id
-    @Query(value= "SELECT * FROM Stock where stock_symbol=:stock_symbol", nativeQuery = true)
+    @Query(value= "SELECT * FROM Stocks where stock_symbol=:stock_symbol", nativeQuery = true)
     List<Stock> getStockByID(@Param("stock_symbol") String stock_symbol);
     // get stock price
     @Query("SELECT stock_price FROM Stock where stock_symbol=:stock_symbol")
