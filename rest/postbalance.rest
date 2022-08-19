@@ -1,0 +1,8 @@
+POST http://localhost:8080/portfolio/deposit 
+Content-type: application/json
+
+{
+    "funds": "3200.8",
+    "emailAddress": "abc@gmail.com",
+    "userName": "Jane Doe"
+}
