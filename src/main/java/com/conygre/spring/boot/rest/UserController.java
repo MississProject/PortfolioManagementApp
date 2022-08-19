@@ -14,6 +14,11 @@ public class UserController {
     private UserService service;
 
     @RequestMapping(method = RequestMethod.GET, value="/{email}")
+    public User getUserByEmail(@PathVariable("email") String email) {
+        return service.getUserByEmail(email);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value="/balance/{email}")
     public double getUserBalanceByEmail(@PathVariable("email") String email) {
         return service.getUserBalanceByEmail(email);
     }
