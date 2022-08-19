@@ -1,0 +1,2 @@
+get http://localhost:8080/stock/price/AMZN
+Content-type: application/json
