@@ -1,4 +1,4 @@
-package com.conygre.spring.boot.repos;
+package com.conygre.spring.boot.repos.Stock;
 import com.conygre.spring.boot.entities.Stock;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

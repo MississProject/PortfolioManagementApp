@@ -1,7 +1,8 @@
-package com.conygre.spring.boot.services;
+package com.conygre.spring.boot.services.Stock;
 
 import com.conygre.spring.boot.entities.Stock;
-import com.conygre.spring.boot.repos.StockRepository;
+import com.conygre.spring.boot.repos.Stock.StockRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
