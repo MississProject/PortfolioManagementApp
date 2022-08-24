@@ -1,7 +1,8 @@
-package com.conygre.spring.boot.services;
+package com.conygre.spring.boot.services.StockOrder;
 
 import com.conygre.spring.boot.entities.StockOrder;
-import com.conygre.spring.boot.repos.StockOrdersRepository;
+import com.conygre.spring.boot.repos.StockOrder.StockOrderRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -9,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class StockOrdersServiceImpl implements StockOrdersService {
+public class StockOrderServiceImpl implements StockOrderService {
     @Autowired
-    private StockOrdersRepository dao;
+    private StockOrderRepository dao;
 
     @Transactional(propagation = Propagation.REQUIRED)
     public Iterable<StockOrder> getAllOrders() {

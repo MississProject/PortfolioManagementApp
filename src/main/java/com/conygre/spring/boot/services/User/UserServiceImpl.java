@@ -1,7 +1,8 @@
-package com.conygre.spring.boot.services;
+package com.conygre.spring.boot.services.User;
 
 import com.conygre.spring.boot.entities.User;
-import com.conygre.spring.boot.repos.UserRepository;
+import com.conygre.spring.boot.repos.User.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;

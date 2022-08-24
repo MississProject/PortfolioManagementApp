@@ -1,4 +1,4 @@
-package com.conygre.spring.boot.services;
+package com.conygre.spring.boot.services.Stock;
 
 import com.conygre.spring.boot.entities.Stock;
 

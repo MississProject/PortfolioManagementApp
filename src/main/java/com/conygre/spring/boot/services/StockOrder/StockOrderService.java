@@ -1,8 +1,8 @@
-package com.conygre.spring.boot.services;
+package com.conygre.spring.boot.services.StockOrder;
 
 import com.conygre.spring.boot.entities.StockOrder;
 
-public interface StockOrdersService {
+public interface StockOrderService {
     // add an order
     StockOrder addNewStockOrder(StockOrder stockOrder);
     // get all orders

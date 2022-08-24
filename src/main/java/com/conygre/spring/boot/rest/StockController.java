@@ -1,6 +1,7 @@
 package com.conygre.spring.boot.rest;
 import com.conygre.spring.boot.entities.Stock;
-import com.conygre.spring.boot.services.StockService;
+import com.conygre.spring.boot.services.Stock.StockService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
