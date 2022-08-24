@@ -1,8 +1,10 @@
 package com.conygre.spring.boot.services.StockOrder;
 
 import com.conygre.spring.boot.entities.StockOrder;
+import com.conygre.spring.boot.repos.Stock.StockRepository;
 import com.conygre.spring.boot.repos.StockOrder.StockOrderRepository;
 
+import com.conygre.spring.boot.repos.User.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -13,6 +15,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class StockOrderServiceImpl implements StockOrderService {
     @Autowired
     private StockOrderRepository dao;
+    @Autowired
+    private StockRepository stockDao; // temp
+    @Autowired
+    private UserRepository userDao; // temp
 
     @Transactional(propagation = Propagation.REQUIRED)
     public Iterable<StockOrder> getAllOrders() {
@@ -21,7 +27,20 @@ public class StockOrderServiceImpl implements StockOrderService {
 
     @Override
     public StockOrder addNewStockOrder(StockOrder stockOrder) {
+        // temp starts
+        // need to calculate with price
+        String stockSymbol = stockOrder.getStockSymbol();
+        String userEmail = stockOrder.getUserEmail();
+        double stockPrice = stockDao.getStockPrice(stockSymbol);
+        double userBalance = userDao.getUserBalanceByEmail(userEmail);
+        double newBalance = userBalance - stockOrder.getNumOfShares() * stockPrice;
+        if (newBalance < 0){
+            // no enough balance
+            return null;
+        }
+        // temp ends
         stockOrder.setOrderID(0);
+        userDao.setUserBalanceByEmail(newBalance, userEmail); // temp
         return dao.save(stockOrder);
     }
 
