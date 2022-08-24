@@ -2,5 +2,5 @@ POST http://localhost:8080/stockorders
 Content-type: application/json
 
 {
-"orderStatus" : "0", "numOfShares" : "4", "stockSymbol" : "AMZN", "userEmail" : "abc@gmail.com"
+"orderStatus" : "0", "numOfShares" : "1", "stockSymbol" : "AMZN", "userEmail" : "abc@gmail.com"
 }
